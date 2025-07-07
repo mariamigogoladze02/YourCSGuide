@@ -1,9 +1,10 @@
-package com.task.yourcsguide.service;
+package com.task.yourcsguide.service.impl;
 
 import com.task.yourcsguide.entity.User;
-import com.task.yourcsguide.entity.UserCreateUpdateDTO;
-import com.task.yourcsguide.entity.UserDTO;
+import com.task.yourcsguide.entity.dto.UserCreateUpdateDTO;
+import com.task.yourcsguide.entity.dto.UserDTO;
 import com.task.yourcsguide.repository.UserRepository;
+import com.task.yourcsguide.service.UserService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -40,6 +41,7 @@ public class UserServiceImpl implements UserService {
 
         User user = new User();
         user.setUsername(dto.getUsername());
+        user.setEmail(dto.getEmail());
         user.setPassword(passwordEncoder.encode(dto.getPassword())); // 🔐 ENCRYPTED
         user.setRole(dto.getRole());
 
@@ -56,6 +58,7 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
         user.setUsername(dto.getUsername());
+        user.setEmail(dto.getEmail());
 
         // Optionally re-encode password only if updated
         if (dto.getPassword() != null && !dto.getPassword().isBlank()) {
@@ -80,6 +83,7 @@ public class UserServiceImpl implements UserService {
         UserDTO dto = new UserDTO();
         dto.setId(user.getId());
         dto.setUsername(user.getUsername());
+        dto.setEmail(user.getEmail());
         dto.setRole(user.getRole());
         return dto;
     }

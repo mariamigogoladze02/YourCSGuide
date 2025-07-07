@@ -1,7 +1,7 @@
 package com.task.yourcsguide.service;
 
-import com.task.yourcsguide.entity.UserCreateUpdateDTO;
-import com.task.yourcsguide.entity.UserDTO;
+import com.task.yourcsguide.entity.dto.UserCreateUpdateDTO;
+import com.task.yourcsguide.entity.dto.UserDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
