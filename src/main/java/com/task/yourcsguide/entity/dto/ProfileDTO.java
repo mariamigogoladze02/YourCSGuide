@@ -1,6 +1,6 @@
 package com.task.yourcsguide.entity.dto;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class ProfileDTO {
     private Long id;
@@ -8,13 +8,13 @@ public class ProfileDTO {
     private String surname;
     private String description;
     private String experience;
-    private ArrayList<String> skills;
+    private List<String> skills;
     private String email;
 
     public ProfileDTO() {
     }
 
-    public ProfileDTO(Long id, String name, String surname, String description, String experience, ArrayList<String> skills, String email) {
+    public ProfileDTO(Long id, String name, String surname, String description, String experience, List<String> skills, String email) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -64,11 +64,11 @@ public class ProfileDTO {
         this.experience = experience;
     }
 
-    public ArrayList<String> getSkills() {
+    public List<String> getSkills() {
         return skills;
     }
 
-    public void setSkills(ArrayList<String> skills) {
+    public void setSkills(List<String> skills) {
         this.skills = skills;
     }
 

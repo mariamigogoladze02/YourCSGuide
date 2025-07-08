@@ -2,7 +2,7 @@ package com.task.yourcsguide.entity;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "profiles")
@@ -25,7 +25,7 @@ public class Profile {
 
     @ElementCollection
     @Column(name = "skill")
-    private ArrayList<String> skills;
+    private List<String> skills;
 
     @Column(name = "email")
     private String email;
@@ -70,11 +70,11 @@ public class Profile {
         this.experience = experience;
     }
 
-    public ArrayList<String> getSkills() {
+    public List<String> getSkills() {
         return skills;
     }
 
-    public void setSkills(ArrayList<String> skills) {
+    public void setSkills(List<String> skills) {
         this.skills = skills;
     }
 

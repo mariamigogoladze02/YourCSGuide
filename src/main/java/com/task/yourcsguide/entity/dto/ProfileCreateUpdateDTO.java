@@ -2,7 +2,7 @@ package com.task.yourcsguide.entity.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class ProfileCreateUpdateDTO {
     private Long id;
@@ -20,7 +20,7 @@ public class ProfileCreateUpdateDTO {
     private String experience;
 
     @NotBlank
-    private ArrayList<String> skills;
+    private List<String> skills;
 
     @NotBlank
     private String email;
@@ -65,11 +65,11 @@ public class ProfileCreateUpdateDTO {
         this.experience = experience;
     }
 
-    public ArrayList<String> getSkills() {
+    public List<String> getSkills() {
         return skills;
     }
 
-    public void setSkills(ArrayList<String> skills) {
+    public void setSkills(List<String> skills) {
         this.skills = skills;
     }
 
