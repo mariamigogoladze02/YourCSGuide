@@ -31,6 +31,13 @@ public class JobServiceImpl implements JobService {
     }
 
     @Override
+    public JobDTO getById(Long id) {
+        Job job = jobRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Job not found with id: " + id));
+        return toDTO(job);
+    }
+
+    @Override
     public JobDTO create(JobCreateUpdateDTO dto) {
         Job job = new Job();
 

@@ -13,4 +13,6 @@ public interface JobService {
     JobDTO update(JobCreateUpdateDTO dto);
 
     JobDTO delete(Long id);
+
+    JobDTO getById(Long id);
 }

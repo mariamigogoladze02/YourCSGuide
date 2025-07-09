@@ -21,6 +21,12 @@ public class JobController {
         return ResponseEntity.ok(jobService.search(jobTitle, pageable));
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<JobDTO> getJobById(@PathVariable Long id) {
+        return ResponseEntity.ok(jobService.getById(id));
+    }
+
+
     @PostMapping
     public ResponseEntity<JobDTO> createJob(@Valid @RequestBody JobCreateUpdateDTO dto) {
         return ResponseEntity.ok(jobService.create(dto));
